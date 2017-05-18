@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Peritos - Honorarios Calculadora</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Peritos <span>Honorarios</span></span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Calculadora</h2>
+			</div>
+			<label for="monto">Monto de la Sentencia</label>
+			<br/>
+			<input type="text" id="monto" class="monto" value="0">
+			<br/>
+			<label for="honorario">Honorarios Minimos Obligatorios</label>
+			<br/>
+			<input type="text" id="honorario" value="0" class="honorario" style="background-color: #f0f0f0;" readonly>
+			<br/>
+			<label for="adicional">Adicional por Complejidad</label>
+			<br/>
+			<input type="text" id="adicional" value="0" class="adicional">
+			<br/>
+			<label for="iva">IVA %</label>
+			<br/>
+			<input type="text" id="iva" value="0">
+			<br/>
+			<label for="total">Total</label>
+			<br/>
+			<input type="text" id="total" value="0" class="total" style="background-color: #f0f0f0;" readonly>
+			<br/>
+			<button type="submit">Calcular</button>
+			<br/>
+			<a href="#"><p class="small">cpcechaco.org.ar</p></a>
+		</div>
+		<br></br>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+
+	var total = 0;
+	var escala = [
+	    [0, 28905.12],
+	    [28905.13, 57810.24],
+	    [57810.25, 115620.49],
+	    [115620.50, 231240.97],
+	    [231240.98, 462481.95],
+	    [462481.96, 924963.90],
+	    [924963.91, 999999999.99]
+	];
+	var fijo_adicional = [
+		[4030.00, 0],
+		[4030.00, 0.010],
+		[6920.51, 0.09],
+		[12123.43, 0.08],
+		[21373.07, 0.07],
+		[37559.94, 0.06],
+		[65308.86, 0.05]
+	];
+
+	function calcularTotal() {
+
+		total = 0;
+		honorario = 0;
+		adicional = 0;
+
+		monto = $('.monto').val();
+		monto = parseFloat(monto.toLocaleString().replace(",", "."));
+	    monto = (isNaN(monto)) ? 0 : monto;
+	    $('.monto').val(monto);
+
+	    indice = 0;
+	    for (var i = 0; i < escala.length; i++) {
+	    	if (monto >= escala[i][0] && monto <= escala[i][1]) {
+	    		indice = i;
+	    	}
+	    }
+
+	    honorario = (monto - escala[indice][0]) * fijo_adicional[indice][1] + fijo_adicional[indice][0];
+	    honorario = honorario.toFixed(2);
+	    $('.honorario').val(honorario);
+
+	    adicional = $('.adicional').val();
+		adicional = parseFloat(adicional.toLocaleString().replace(",", "."));
+	    adicional = (isNaN(adicional)) ? 0 : adicional;
+	    $('.adicional').val(adicional);
+
+	    total = honorario + adicional;
+	    $('.total').val(total);
+	}
+
+	$(".monto").change(function() {
+		calcularTotal();
+	});
+	$(".adicional").change(function() {
+		calcularTotal();
+	});
+</script>
+
+</html>
