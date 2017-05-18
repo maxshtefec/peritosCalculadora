@@ -36,9 +36,9 @@
 			<br/>
 			<input type="text" id="adicional" value="0" class="adicional">
 			<br/>
-			<label for="iva">IVA %</label>
+			<label for="iva">IVA</label>
 			<br/>
-			<input type="text" id="iva" value="0">
+			<input type="text" id="iva" value="0" class="iva">
 			<br/>
 			<label for="total">Total</label>
 			<br/>
@@ -46,7 +46,7 @@
 			<br/>
 			<button type="submit">Calcular</button>
 			<br/>
-			<a href="#"><p class="small">cpcechaco.org.ar</p></a>
+			<a href="http://www.cpcechaco.org.ar"><p class="small">CPCE CHACO</p></a>
 		</div>
 		<br></br>
 	</div>
@@ -117,7 +117,12 @@
 	    adicional = (isNaN(adicional)) ? 0 : adicional;
 	    $('.adicional').val(adicional);
 
-	    total = honorario + adicional;
+	    iva = $('.iva').val();
+		iva = parseFloat(iva.toLocaleString().replace(",", "."));
+	    iva = (isNaN(iva)) ? 0 : iva;
+	    $('.iva').val(iva);
+
+	    total = parseFloat(honorario) + parseFloat(adicional) + parseFloat(iva);
 	    $('.total').val(total);
 	}
 
@@ -125,6 +130,9 @@
 		calcularTotal();
 	});
 	$(".adicional").change(function() {
+		calcularTotal();
+	});
+	$(".iva").change(function() {
 		calcularTotal();
 	});
 </script>
