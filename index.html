@@ -8,9 +8,12 @@
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/animate.css" media="screen">
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css" media="screen">
+
+	<!-- Style para imprimir -->
+	<link rel="stylesheet" href="css/imprimir.css" media="print">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -18,8 +21,55 @@
 <body>
 	<div class="container">
 		<div class="top">
+			<img id="headline"></img>
 			<h1 id="title" class="hidden"><span id="logo">Peritos <span>Honorarios</span></span></h1>
 		</div>
+		<div class="expediente-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Datos del Expediente</h2>
+			</div>
+			<div class="twocolumn">
+				<label for="caratula">Car&aacute;tula</label>
+				<br/>
+				<input type="text" id="caratula">
+				<br/>
+				<label for="expedientenro">Expediente Nº</label>
+				<br/>
+				<input type="text" id="expedientenro">
+				<br/>
+			</div>
+			<div class="twocolumn">
+				<label for="juzgado">Juzgado Nº</label>
+				<br/>
+				<input type="text" id="juzgado">
+				<br/>
+				<label for="fuero">Fuero</label>
+				<br/>
+				<input type="text" id="fuero">
+				<br/>
+			</div>
+		</div>
+		<br></br>
+		<div class="perito-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Datos del Perito</h2>
+			</div>
+			<div class="threecolumn">
+				<label for="nombre">Nombre</label>
+				<br/>
+				<input type="text" id="nombre">
+				<br/>
+				<label for="matriculanro">Matr&iacute;cula Nº</label>
+				<br/>
+				<input type="text" id="matriculanro">
+				<br/>
+				<label for="domicilio">Domicilio</label>
+				<br/>
+				<input type="text" id="domicilio">
+				<br/>
+			</div>
+		</div>
+		<br></br>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
 				<h2>Calculadora</h2>
@@ -28,7 +78,7 @@
 			<br/>
 			<input type="text" id="monto" class="monto" value="0">
 			<br/>
-			<label for="honorario">Honorarios Minimos Obligatorios</label>
+			<label for="honorario">Honorarios M&iacute;nimos Obligatorios</label>
 			<br/>
 			<input type="text" id="honorario" value="0" class="honorario" style="background-color: #f0f0f0;" readonly>
 			<br/>
@@ -44,7 +94,7 @@
 			<br/>
 			<input type="text" id="total" value="0" class="total" style="background-color: #f0f0f0;" readonly>
 			<br/>
-			<button type="submit">Calcular</button>
+			<button id="sub" type="submit">Calcular</button>
 			<br/>
 			<a href="http://www.cpcechaco.org.ar"><p class="small">CPCE CHACO</p></a>
 		</div>

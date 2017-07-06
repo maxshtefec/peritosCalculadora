@@ -1,0 +1,72 @@
+#cabecera, #menu, #lateral, #comentarios, #sub {
+ 	display: none !important;
+}
+
+header, footer, nav, aside, a {
+  display: none;
+}
+
+.footer {
+  display: none;
+}
+
+@media print {
+    body:before {
+        content:url(../images/cpce.png);
+        z-index: -1;
+        position: left top; 
+		padding-top: 100px; 
+		margin-bottom: 50px;
+		margin-left: 220px;
+      }
+}
+
+body, #contenido, #principal, #pie {
+ 	float: none !important;
+ 	width: auto !important;
+ 	margin:  4mm !important;
+	padding: 0 !important;
+}
+
+body { 
+	color: #000; 
+	font: 100%/150% Georgia, "Times New Roman", Times, serif; 
+}
+
+#title {
+	text-align: center;
+	font-weight: bold;
+	text-decoration: underline;
+	margin-bottom: 80px !important;
+}
+
+.login-box .box-header, .expediente-box .box-header, .perito-box .box-header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.login-box, .expediente-box, .perito-box, label {
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.login-box, .expediente-box, .perito-box, input {
+	text-align: center;
+	border: none;
+	font-size: 14px;
+	color: #888;
+}
+
+.threecolumn {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
+.twocolumn {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
