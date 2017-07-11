@@ -6,25 +6,14 @@ header, footer, nav, aside, a {
   display: none;
 }
 
-.footer {
+.footer, #ivabr, #totalbr, #imprimir {
   display: none;
-}
-
-@media print {
-    body:before {
-        content:url(../images/cpce.png);
-        z-index: -1;
-        position: left top; 
-		padding-top: 100px; 
-		margin-bottom: 50px;
-		margin-left: 220px;
-      }
 }
 
 body, #contenido, #principal, #pie {
  	float: none !important;
  	width: auto !important;
- 	margin:  4mm !important;
+ 	margin:  -12mm 12mm 12mm 12mm !important;
 	padding: 0 !important;
 }
 
@@ -33,40 +22,63 @@ body {
 	font: 100%/150% Georgia, "Times New Roman", Times, serif; 
 }
 
+#imglogo {
+	margin-left: -60px;
+}
+
+#hr {
+	visibility: visible;
+}
+
+#hrfirma {
+	visibility: visible;
+	float: right;
+	margin-top: 120px;
+	width: 200px;
+	background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}
+
+#lbfirma {
+	visibility: visible;
+	float: right !important;
+	text-align: right !important;
+	margin: 130px -220px 0 0;
+}
+
 #title {
 	text-align: center;
 	font-weight: bold;
+	margin: 0 auto;
+	max-width: 800px;
+	margin-top: 200px;
+}
+
+h1#title {
+	text-align: center;
 	text-decoration: underline;
-	margin-bottom: 80px !important;
-}
-
-.login-box .box-header, .expediente-box .box-header, .perito-box .box-header {
-	text-align: center;
 	font-weight: bold;
-	font-size: 18px;
+	margin: 0 auto;
+	max-width: 800px;
+	margin-top: 200px;
+	margin-bottom: -180px;
 }
 
-.login-box, .expediente-box, .perito-box, label {
+.expediente-box .box-header, .perito-box .box-header, .login-box .box-header {
 	text-align: center;
-	font-weight: bold;
-	font-size: 16px;
 }
 
-.login-box, .expediente-box, .perito-box, input {
-	text-align: center;
+.expediente-box .twocolumn label, .perito-box .threecolumn label, .login-box label {
+	text-align: left;
+	float: left;
+}
+
+.expediente-box .twocolumn input, .perito-box .threecolumn input, .login-box input {
 	border: none;
-	font-size: 14px;
-	color: #888;
+	text-align: right;
+	float: right;
 }
 
-.threecolumn {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-}
-
-.twocolumn {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
+.login-box input:before {
+    content: '\25BC';
 }

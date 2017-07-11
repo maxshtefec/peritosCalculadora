@@ -8,6 +8,10 @@ body {
 	color: #666;
 }
 
+#hr, #hrfirma, #lbfirma, #expedientenropr, #montost {
+	visibility: hidden;
+}
+
 /* Typography */
 h1#title {
 	font-family: 'Roboto Slab', serif;
@@ -15,16 +19,26 @@ h1#title {
 	font-size: 3.2em;
 	color: white;
 	text-shadow: 0 0 10px rgba(0,0,0,0.8);
-	margin: 0 auto;
-	padding-top: 180px;
-	max-width: 300px;
+	margin: -70px auto;
+	max-width: 600px;
 	text-align: center;
 	position: relative;
-	top: 0px;
+	margin-top: 70px;
 }
 
 h1#title span span {
 	font-weight: 400;
+}
+
+h2#title {
+	font-family: 'Roboto Slab', serif;
+	color: white;
+	text-shadow: 0 0 10px rgba(0,0,0,0.8);
+	margin: 10px auto -10px auto;
+	max-width: 700px;
+	text-align: center;
+	position: relative;
+	margin-top: 70px;
 }
 
 h2 {
