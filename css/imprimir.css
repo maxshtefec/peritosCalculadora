@@ -68,12 +68,12 @@ h1#title {
 	text-align: center;
 }
 
-.expediente-box .twocolumn label, .perito-box .threecolumn label, .login-box label {
+.expediente-box .twocolumn label, .perito-box .threecolumn label, .expediente-box .onecolumn label, .login-box label {
 	text-align: left;
 	float: left;
 }
 
-.expediente-box .twocolumn input, .perito-box .threecolumn input, .login-box input {
+.expediente-box .twocolumn input, .perito-box .threecolumn input, .expediente-box .onecolumn input, .login-box input {
 	border: none;
 	text-align: right;
 	float: right;

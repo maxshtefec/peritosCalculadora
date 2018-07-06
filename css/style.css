@@ -185,6 +185,12 @@ p.small {
     column-count: 2;
 }
 
+.onecolumn {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+}
+
 .perito-box {
 	background-color: white;
 	max-width: 640px;
@@ -281,6 +287,7 @@ p.small {
 .expediente-box input {
 	margin-bottom: 20px;
 	padding: 8px;
+	width: 400px;
 	border: 1px solid #ccc;
 	border-radius: 2px;
 	font-size: .9em;
